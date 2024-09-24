@@ -4,7 +4,7 @@ import { createServer } from "http";
 const server = createServer();
 
 server.on("upgrade", (req, socket, head) => {
-  if (req?.url?.endsWith("/wisp/")) wisp?.routeRequest(req, socket, head);
+  if (req?.url?.endsWith("/")) wisp?.routeRequest(req, socket, head);
   else socket?.end();
 });
 
